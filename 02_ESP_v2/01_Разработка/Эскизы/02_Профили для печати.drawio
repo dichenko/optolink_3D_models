@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="esp-print-profiles" name="Профили козырьков для FDM">
+    <mxGraphModel page="1" pageWidth="1160" pageHeight="526" grid="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;arcSize=8;fillColor=#F2F6FA;strokeColor=none;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="0" y="0" width="1160" height="526" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Козырьки ESP для печати плашмя" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=32;fontColor=#172A41;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="39" y="30" width="662.4" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Продольные сечения · размеры в мм · слои идут снизу вверх" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=17;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="41" y="79" width="668.6099999999999" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="" style="rounded=1;arcSize=8;fillColor=#DCEBFA;strokeColor=#4776A1;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="41" y="115" width="19" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Задняя стенка кассеты" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="68" y="110" width="217.35" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="rounded=1;arcSize=8;fillColor=#D5EEE3;strokeColor=#276B56;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="288" y="115" width="19" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Плата ESP" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="315" y="110" width="93.14999999999999" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="rounded=1;arcSize=8;fillColor=#FCD7B5;strokeColor=#984A22;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="435" y="115" width="19" height="13" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Козырёк" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="462" y="110" width="72.44999999999999" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="rounded=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E2EE;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="39" y="149" width="350" height="316" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Плоский низ" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=20;fontColor=#172A41;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="59" y="169" width="151.79999999999998" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Исходный вариант" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="59" y="199" width="154.56" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="rounded=0;arcSize=8;fillColor=#DCEBFA;strokeColor=#4776A1;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="297" width="103" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="rounded=0;arcSize=8;fillColor=#D5EEE3;strokeColor=#276B56;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="173" y="335" width="165" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="ESP" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#276B56;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="241" y="355" width="33.12" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="shape=stencil(dY9BDsIgEEWvMpkL0I1RE+AuYzuViQgEsNXbK3TDxs3P5GWS978ujhLDbvB6QXAGzycEKonnanCjLHTzjFBqjg/eZam/FwmOs1S0eo2Z7zm+wmJ1ouqsfsaN4W1wQvj0VFZ7CZ01wz/YtAOdRjj7WLgd6nCs4v1RqMOxhOpz7Bc=);fillColor=#FCD7B5;strokeColor=#984A22;strokeWidth=1.6;" parent="1" vertex="1">
+          <mxGeometry x="120" y="245" width="98" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="18" style="endArrow=none;endFill=1;endSize=7;strokeColor=#984A22;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="173" y="320" as="sourcePoint" />
+            <mxPoint x="218" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="173" y="231" as="sourcePoint" />
+            <mxPoint x="218" y="231" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="173" y="226" as="sourcePoint" />
+            <mxPoint x="173" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="218" y="226" as="sourcePoint" />
+            <mxPoint x="218" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="0,6" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="226" y="220" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="23" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="226" y="322" as="sourcePoint" />
+            <mxPoint x="241" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" value="0,2 у стенки" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=13;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="247" y="302" width="107.63999999999999" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Горизонтальный свес 0,6 мм." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="59" y="414" width="260.82" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Пробная печать или поддержка." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="59" y="437" width="280.14" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="rounded=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E2EE;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="405" y="149" width="350" height="316" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Сплошной скос 45°" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=20;fontColor=#172A41;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="425" y="169" width="234.6" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Профиль без плоского нависания" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="425" y="199" width="289.79999999999995" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="rounded=0;arcSize=8;fillColor=#DCEBFA;strokeColor=#4776A1;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="436" y="297" width="103" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="rounded=0;arcSize=8;fillColor=#D5EEE3;strokeColor=#276B56;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="539" y="335" width="165" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="ESP" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#276B56;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="607" y="355" width="33.12" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="shape=stencil(dc9RDsIgDAbgqzS9AEuWRU2Au+DWSSMCAdz09gp7wQdfmuZLk/+vzNZEgl3h5YxgFZ4mBJMjzUXhZhKbqyOEXFK4085L+Z6wt5S4oJZrSHRL4ekXLaMpVstH2AheCgeEd5tCS8e+WU34h+OvTmPTWqbTocfZhUx1EUfyys4dNRv21UR7Un8A);fillColor=#FCD7B5;strokeColor=#984A22;strokeWidth=1.6;" parent="1" vertex="1">
+          <mxGeometry x="486" y="245" width="98" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="34" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="549" y="320" as="sourcePoint" />
+            <mxPoint x="581" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35" value="45°" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#984A22;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="587" y="289" width="31.049999999999997" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="36" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="539" y="231" as="sourcePoint" />
+            <mxPoint x="584" y="231" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="539" y="226" as="sourcePoint" />
+            <mxPoint x="539" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="38" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="584" y="226" as="sourcePoint" />
+            <mxPoint x="584" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="39" value="0,6" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="592" y="220" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="40" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="322" as="sourcePoint" />
+            <mxPoint x="607" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41" value="0,2 у стенки" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=13;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="613" y="302" width="107.63999999999999" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="Каждый слой опирается на предыдущий." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="425" y="414" width="347.76" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="Зазор увеличивается к носику." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="425" y="437" width="280.14" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="" style="rounded=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E2EE;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="771" y="149" width="350" height="316" as="geometry" />
+        </mxCell>
+        <mxCell id="45" value="Площадка + скос 45°" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=20;fontColor=#172A41;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="791" y="169" width="262.2" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="Короткая плоская часть для упора" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="791" y="199" width="309.12" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="" style="rounded=0;arcSize=8;fillColor=#DCEBFA;strokeColor=#4776A1;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="802" y="297" width="103" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="" style="rounded=0;arcSize=8;fillColor=#D5EEE3;strokeColor=#276B56;strokeWidth=1.5;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="905" y="335" width="165" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="49" value="ESP" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=16;fontColor=#276B56;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="973" y="355" width="33.12" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="" style="shape=stencil(dc/BDsIgDAbgV2n6AuzgnCbAu+DWSSMCAdz07XVw2Q5emuZLk/+vzNZEglXh9YJgFQ49gsmRxqJwMYnNzRFCLik8aOWp/E7YW0pcUMs5JLqn8PKTltEUq+UzLARvhR3Cp06hpWNfbUv4h6f+oOemw1G7PY4uZNoW0ZJndq7VrLivJuqT+gs=);fillColor=#FCD7B5;strokeColor=#984A22;strokeWidth=1.6;" parent="1" vertex="1">
+          <mxGeometry x="852" y="245" width="98" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="51" style="endArrow=none;endFill=1;endSize=7;strokeColor=#984A22;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="905" y="325" as="sourcePoint" />
+            <mxPoint x="920" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="52" value="45°" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#984A22;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="956" y="293" width="31.049999999999997" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="53" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="905" y="231" as="sourcePoint" />
+            <mxPoint x="950" y="231" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="54" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="905" y="226" as="sourcePoint" />
+            <mxPoint x="905" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="55" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="226" as="sourcePoint" />
+            <mxPoint x="950" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="56" value="0,6" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="958" y="220" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="57" style="endArrow=none;endFill=1;endSize=7;strokeColor=#4B6178;strokeWidth=1.5;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="958" y="322" as="sourcePoint" />
+            <mxPoint x="973" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="58" value="0,2 у стенки" style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=13;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="979" y="302" width="107.63999999999999" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="Площадка 0,2 мм у стенки, дальше скос." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="791" y="414" width="365" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="Площадку проверить пробной печатью." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=14;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="791" y="437" width="338.09999999999997" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="Профили применяются к двум боковым козырькам. Зона над элементом в центре открыта." style="text;html=0;whiteSpace=nowrap;align=left;verticalAlign=top;spacing=0;strokeColor=none;fillColor=none;fontFamily=Segoe UI;fontSize=15;fontColor=#4B6178;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="42" y="485" width="848.6999999999999" height="19" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

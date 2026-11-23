@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optolink ESP v2 — проект и комплект для печати</title>
+<meta name="description" content="Сборка FreeCAD, исходники, отдельные STL, размеры и история доработок корпуса Optolink ESP v2.">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f2f3ef;
+    --white: #fff;
+    --ink: #1c282b;
+    --muted: #4e6063;
+    --accent: #175958;
+    --mint: #e9f2ed;
+    --line: #d7dfd8;
+    --rule: #e6eae4;
+    --amber: #fff3dc;
+    --amber-line: #b88536;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box }
+  html { scroll-behavior: smooth }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.58 "Segoe UI", system-ui, sans-serif }
+  a { color: var(--accent); text-underline-offset: 3px }
+  a:hover { color: #0a3f3d }
+  :focus-visible { outline: 3px solid #46736c; outline-offset: 4px }
+  img { display: block; max-width: 100%; height: auto }
+  .wrap { width: min(1160px, 100% - 56px); margin-inline: auto }
+  .bar { background: var(--white); border-bottom: 1px solid var(--line) }
+  .bar-inner { min-height: 67px; display: flex; align-items: center; justify-content: space-between; gap: 20px }
+  .brand { color: var(--ink); text-decoration: none; font-weight: 750; white-space: nowrap }
+  nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-size: .9rem }
+  nav a { color: var(--muted); text-decoration: none }
+  nav a:hover { text-decoration: underline }
+  .hero { padding-block: 46px 30px; display: grid; grid-template-columns: 1fr 1.02fr; gap: 28px; align-items: stretch }
+  .intro { border-radius: 21px; background: #193733; color: #fff; padding: clamp(25px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center }
+  .intro small { color: #bbd6cc; font-size: .84rem; font-weight: 630 }
+  h1, h2, h3, p { margin: 0 }
+  h1 { font-size: clamp(2.55rem, 5vw, 4.7rem); line-height: .99; letter-spacing: -.045em; margin: 13px 0 20px; font-weight: 700 }
+  h2 { font-size: clamp(1.65rem, 2.65vw, 2.3rem); letter-spacing: -.032em; line-height: 1.14; margin-bottom: 13px }
+  h3 { font-size: 1.14rem; line-height: 1.34; margin-bottom: 7px }
+  .intro p { color: #e0ede5; max-width: 43ch; font-size: 1.025rem }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px }
+  .button { padding: 10px 14px; border: 1px solid #9dbcb1; color: #fff; border-radius: 9px; text-decoration: none; font-size: .89rem; font-weight: 680 }
+  .button:hover { background: #284d46; color: white }
+  .button.primary { background: #e6f4eb; border-color: #e6f4eb; color: #1c3e37 }
+  .button.primary:hover { background: #fff; color: #1c3e37 }
+  figure { margin: 0; background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden }
+  .hero-image { display: flex; flex-direction: column; justify-content: center; min-width: 0 }
+  .hero-image img { width: 100%; max-height: 415px; object-fit: contain; margin: auto }
+  figcaption { padding: 11px 15px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--rule); background: #fbfcfa }
+  .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 8px }
+  .quick > div { background: var(--white); border: 1px solid var(--line); border-radius: 13px; padding: 15px 18px }
+  .quick strong { display: block; font-size: 1.18rem; line-height: 1.25; margin-bottom: 4px }
+  .quick span, .lead { color: var(--muted) }
+  section { padding-top: 40px; scroll-margin-top: 20px }
+  .lead { max-width: 82ch; margin-bottom: 17px }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--white); border-radius: var(--radius) }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem }
+  caption { text-align: left; padding: 13px 17px; background: #e7efe9; font-weight: 700 }
+  th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule) }
+  thead th { background: #f7f9f6; color: var(--muted); font-size: .81rem; font-weight: 650 }
+  tbody th { font-weight: 650 }
+  tbody tr:last-child > * { border-bottom: 0 }
+  .size { white-space: nowrap; font-variant-numeric: tabular-nums }
+  .ref, .two, .gallery { display: grid; gap: 15px }
+  .ref { margin-top: 15px }
+  .two { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px }
+  .card, .note { border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); padding: 17px 20px }
+  .card p + p, .note p + p { margin-top: 9px }
+  .folder-list { columns: 2; padding-left: 18px; margin: 8px 0 0; column-gap: 20px }
+  .folder-list li { overflow-wrap: anywhere; break-inside: avoid; margin-bottom: 3px }
+  .note { background: var(--amber); border-color: #ecd8b6; border-left: 4px solid var(--amber-line) }
+  .callout { background: var(--mint) }
+  .steps { margin: 8px 0 0; padding-left: 23px }
+  .steps li + li { margin-top: 7px }
+  .history { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 12px }
+  .history li { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px }
+  .history li p { max-width: 106ch }
+  .history li p + p { margin-top: 8px }
+  .detail-link { margin-top: 10px; font-size: .88rem }
+  .variant { margin-top: 15px }
+  .variant img { width: 100%; max-height: 280px; object-fit: contain; background: #fff }
+  .files { margin-top: 15px }
+  footer { border-top: 1px solid var(--line); margin-top: 43px; padding-block: 19px 32px; color: var(--muted); font-size: .87rem }
+  @media (max-width: 800px) {
+    .wrap { width: min(100% - 32px, 670px) }
+    .bar-inner { flex-wrap: wrap; gap: 7px; padding-block: 12px }
+    nav { gap: 6px 14px }
+    .hero { grid-template-columns: 1fr; padding-block: 25px 17px; gap: 13px }
+    .hero-image img { max-height: 350px }
+    .quick { gap: 8px }
+    .quick > div { padding: 10px }
+    .quick strong { font-size: 1rem }
+    .quick span { font-size: .8rem }
+    .two, .gallery { grid-template-columns: 1fr }
+    .gallery img { width: 100%; max-height: 300px; object-fit: contain }
+    td, th { padding: 10px 12px }
+    section { padding-top: 31px }
+  }
+  @media (max-width: 420px) {
+    .quick { grid-template-columns: 1fr }
+    .quick strong { display: inline; margin: 0 5px 0 0 }
+    .folder-list { columns: 1 }
+  }
+  @media print {
+    body { background: white }
+    .wrap { width: 100% }
+    .actions, nav { display: none }
+    .hero { padding-block: 16px; grid-template-columns: 1fr 1fr }
+    .intro { color: var(--ink); border: 1px solid var(--line); background: var(--white) }
+    .intro small, .intro p { color: var(--muted) }
+    .card, .note, figure, .history li, tr { break-inside: avoid }
+    h2, h3 { break-after: avoid }
+  }
+</style>
+</head>
+<body id="top">
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="#top">Optolink ESP v2</a>
+    <nav aria-label="Разделы проекта">
+      <a href="#parts">Детали и размеры</a>
+      <a href="#assembly">Сборка</a>
+      <a href="#history">История</a>
+      <a href="#files">Файлы проекта</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <div class="intro">
+      <small>Редакция от 18 ноября 2026 года</small>
+      <h1>Optolink<br>ESP v2</h1>
+      <p>Корпус Optolink с кассетой для ESP32-C3, нижней монтажной платой и усиленными опорными полками.</p>
+      <div class="actions">
+        <a class="button primary" href="01_Разработка/Optolink_ESP_v2.FCStd">Сборка FreeCAD</a>
+        <a class="button" href="02_На печать/print.zip" download>Все STL в ZIP</a>
+      </div>
+    </div>
+    <figure class="hero-image">
+      <img src="03_Иллюстрации/assembly-open.webp" alt="Открытая сборка FreeCAD с прозрачным корпусом, монтажной платой, кассетой и ESP32-C3" width="1050" height="840">
+      <figcaption>Вид из FreeCAD. Стенки показаны прозрачными, чтобы были видны платы и кассета.</figcaption>
+    </figure>
+  </div>
+  <div class="quick">
+    <div><strong>34,15 × 34,25 × 19 мм</strong><span>корпус без крышки</span></div>
+    <div><strong>30,65 × 30,75 × 3,70 мм</strong><span>кассета с козырьками</span></div>
+    <div><strong>6 файлов STL</strong><span>4 детали на сборку, одна V-вставка из трёх</span></div>
+  </div>
+
+  <section id="parts">
+    <h2>Детали и размеры</h2>
+    <p class="lead">Габариты указаны в порядке X × Y × Z, в миллиметрах. STL лежат по отдельности в папке «02_На печать», нижняя точка каждой модели приведена к Z=0.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Печатные детали</caption>
+        <thead><tr><th scope="col">Деталь</th><th scope="col">Габарит, мм</th><th scope="col">Описание</th><th scope="col">Файл</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Корпус</th><td class="size">34,15 × 34,25 × 19,00</td><td>Полки кассеты на Z=11,5, нижние опоры платы на Z=7.</td><td><a href="02_На печать/01_Корпус.stl" download>01 · STL</a></td></tr>
+          <tr><th scope="row">Крышка</th><td class="size">34,15 × 34,25 × 5,00</td><td>Защёлки, решётка над ESP и выемка 5 × 2 мм.</td><td><a href="02_На печать/02_Крышка.stl" download>02 · STL</a></td></tr>
+          <tr><th scope="row">H-кассета</th><td class="size">30,65 × 30,75 × 3,70</td><td>Основание 3 мм. Козырьки выступают над ним на 0,7 мм.</td><td><a href="02_На печать/03_H-кассета.stl" download>03 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, исходная</th><td class="size">10,146 × 10,35 × 11,00</td><td>Без точки. Исходный контур, как в основной сборке.</td><td><a href="02_На печать/04_V-вставка_orig.stl" download>04 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, −0,1 мм</th><td class="size">9,945 × 10,15 × 11,00</td><td>Одна точка. Контур уменьшен на 0,1 мм на сторону.</td><td><a href="02_На печать/05_V-вставка_m1.stl" download>05 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, −0,2 мм</th><td class="size">9,745 × 9,95 × 11,00</td><td>Две точки. Контур уменьшен на 0,2 мм на сторону.</td><td><a href="02_На печать/06_V-вставка_m2.stl" download>06 · STL</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ref">
+      <div class="table-wrap">
+        <table>
+          <caption>Габаритные макеты электроники в FreeCAD</caption>
+          <thead><tr><th scope="col">Деталь</th><th scope="col">Габарит, мм</th><th scope="col">Положение в сборке</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Нижняя монтажная плата</th><td class="size">30,15 × 30,25 × 1,50</td><td>Низ Z=7, верх Z=8,5.</td></tr>
+            <tr><th scope="row">Плата ESP32-C3</th><td class="size">23,00 × 18,00 × 1,00</td><td>Низ Z=13, верх Z=14. Размеры относятся к текстолиту.</td></tr>
+            <tr><th scope="row">Разъём USB-C</th><td class="size">6,00 × 8,80 × 3,20</td><td>Ось Z=15,7295. Вылет за наружный торец корпуса 0,15 мм.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure><img src="03_Иллюстрации/housing.webp" alt="Корпус с внутренними опорными полками" width="1050" height="840" loading="lazy"><figcaption>Корпус и полки кассеты</figcaption></figure>
+      <figure><img src="03_Иллюстрации/cassette.webp" alt="Усиленная H-кассета с двумя козырьками и окнами под провода" width="1050" height="840" loading="lazy"><figcaption>H-кассета с двумя козырьками</figcaption></figure>
+      <figure><img src="03_Иллюстрации/assembly-closed.webp" alt="Корпус Optolink с установленной крышкой и V-вставкой" width="1050" height="840" loading="lazy"><figcaption>Закрытый корпус с V-вставкой</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="assembly">
+    <h2>Печать и сборка</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Печатный комплект</h3>
+        <p>Для одного корпуса нужны STL 01–03 и одна V-вставка из файлов 04–06. У уменьшенных вставок точки Ø1 мм глубиной 0,5 мм позволяют различать варианты.</p>
+        <p>Корпус и кассета ориентированы основанием на стол. Крышка экспортирована наружной плоскостью вниз. Скосы 45° на опорных полках и козырьках рассчитаны на послойную печать плашмя. Фактическую печать этих изменений ещё предстоит проверить.</p>
+        <figure class="variant"><img src="03_Иллюстрации/v-variants.webp" alt="Три варианта V-вставки с нулём, одной и двумя отметками" loading="lazy"><figcaption>Слева направо: исходная, −0,1 мм и −0,2 мм на сторону.</figcaption></figure>
+      </div>
+      <div class="card">
+        <h3>Как завести нижнюю плату</h3>
+        <ol class="steps">
+          <li>Наклонить монтажную плату вдоль X примерно на <strong>11°</strong>. Опустить один край ниже верхней опорной полки.</li>
+          <li>Сдвинуть плату к опущенному краю, завести его под полку и опустить второй край.</li>
+          <li>Выровнять и отцентрировать плату, затем посадить её на нижние угловые опоры Z=7.</li>
+        </ol>
+        <p class="detail-link">Этот проход проверен на габаритном макете 30,15 × 30,25 × 1,5 мм. В узком месте расчётный зазор порядка 0,1 мм.</p>
+      </div>
+    </div>
+    <div class="two files">
+      <div class="card callout">
+        <h3>Узел ESP и кассеты</h3>
+        <p>Плата заводится в кассету со стороны USB. Задняя кромка входит под два козырька и доходит до упора. Два окна оставляют доступ к пинам и позволяют провести провода.</p>
+      </div>
+      <aside class="note">
+        <h3>Что проверить на первой примерке</h3>
+        <p>В модели детали совместимы в конечном положении. Полную траекторию установки кассеты вместе с ESP и разъёмом через боковое USB-отверстие пока проверить не удалось.</p>
+        <p>Сверить контур реальной ESP, расположение USB, свободную ширину под козырьки и габарит центрального элемента с пайкой. Над элементом высотой 1 мм предусмотрен открытый проход шириной 12 мм.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>История доработок</h2>
+    <p class="lead">Размеры Z отсчитываются от наружного дна корпуса. X — сторона, по которой разъём выходит через торец.</p>
+    <ol class="history">
+      <li>
+        <h3>Корпус укорочен и стал выше</h3>
+        <p>Оба торца сдвинуты внутрь на 4 мм. Наружная длина уменьшилась с 42,15 до 34,15 мм, ширина осталась 34,25 мм, высота выросла с 16 до 19 мм. Внутреннее сечение корпуса на уровне кассеты 31,15 × 31,25 мм. Номинально дно 2 мм, стенки 1,5 мм.</p>
+        <p>Нижние угловые опоры подняты с Z=6 до Z=7. Центр USB-отверстия поднят с Z=13,2295 до Z=15,7295.</p>
+      </li>
+      <li>
+        <h3>Крышка подогнана под новый корпус</h3>
+        <p>Длина уменьшена до 34,15 мм, исходные защёлки сохранены. Круглое отверстие Ø2 мм закрыто. Решётка из 33 отверстий перенесена над ESP примерно на 6,825 мм по X, шаг рядов по Y уменьшен примерно на 10,2%. На торце напротив USB сделана выемка 5 × 2 мм для снятия крышки.</p>
+      </li>
+      <li>
+        <h3>От натяга к монтажному зазору</h3>
+        <p>Первая кассета имела габарит 31,21 × 31,31 мм и пересекала стенки на 0,03 мм с каждой стороны. Габарит основания уменьшен до 30,65 × 30,75 мм, что дало по 0,25 мм зазора при центрировании. Добавлены четыре выемки под выступы у входа и уменьшена нижняя фаска у опорных торцов.</p>
+      </li>
+      <li>
+        <h3>Усилен контур и оставлены окна</h3>
+        <p>Две боковые полосы шириной 3 мм замкнули наружный контур H-кассеты. Торец напротив USB усилен до 7,4 мм на этом этапе. Внутри сохранились два окна для проводов и доступ к обоим рядам пинов.</p>
+      </li>
+      <li>
+        <h3>Карман под реальную толщину ESP</h3>
+        <p>Толщина платы в сборке исправлена с 1,5 на 1 мм. Дно кармана поднято на 0,5 мм и имеет толщину 1,5 мм. Глубина кармана стала 1,5 мм. Верх текстолита остался на Z=14.</p>
+        <p>Тонкая стенка 0,15 мм со стороны USB снята. Её размер перенесён на задний упор, торец усилен до 7,55 мм. Гнездо сохранило длину 23,1 мм и ширину 18,2 мм, ESP и USB смещены на 0,15 мм к выходу. Итоговые окна для проводов 21,38 × 7,375 мм. Под кассетой над нижней платой 3 мм.</p>
+      </li>
+      <li>
+        <h3>Жёсткие козырьки фиксируют задний край платы</h3>
+        <p>Два козырька шириной 2,5 мм заходят над платой на 0,6 мм. Нижняя поверхность каждого выполнена сплошным скосом 45°. У заднего упора зазор по высоте 0,2 мм. Между козырьками оставлена зона 12 мм для напаянного компонента высотой 1 мм. Общая высота кассеты теперь 3,7 мм.</p>
+        <p class="detail-link"><a href="01_Разработка/Эскизы/01_Жёсткие козырьки.png">Эскиз фиксации</a> · <a href="01_Разработка/Эскизы/02_Профили для печати.png">Сравнение печатных профилей</a></p>
+      </li>
+      <li>
+        <h3>Опорные полки увеличены для печати</h3>
+        <p>Выступ каждой полки увеличен с 0,4 до 0,8 мм. Высота у стенки 1,2 мм, на внутренней кромке 0,4 мм. Нижний скос 45°. Опорная плоскость осталась на Z=11,5. Расчётная площадь контакта кассеты с каждой полкой выросла с 3,035 до 15,175 мм². Для нижней платы проверен наклонный проход.</p>
+      </li>
+      <li>
+        <h3>Подготовлены три V-вставки для примерки</h3>
+        <p>Сохранена исходная вставка и добавлены два варианта с уменьшением контура на 0,1 и 0,2 мм на сторону. Номинальная высота всех вариантов 11 мм. В сборке исходная вставка выступает на 8 мм ниже дна. Полная высота корпуса с крышкой и установленной вставкой 28 мм.</p>
+      </li>
+    </ol>
+    <div class="two files">
+      <figure><img src="03_Иллюстрации/cassette-esp.webp" alt="ESP32-C3 и USB-C в кармане кассеты актуальной сборки" width="1050" height="840" loading="lazy"><figcaption>Плата и разъём в кармане актуальной кассеты</figcaption></figure>
+      <div class="card">
+        <h3>Проверки комплекта v2</h3>
+        <p>Основная сборка сохранена как отдельный проект FreeCAD. В ней проверены размеры, положение полок, опора кассеты и отсутствие объёмных пересечений с корпусом, крышкой и макетами в конечном положении.</p>
+        <p>Все шесть STL повторно открыты как замкнутые сетки. Файлы внутри ZIP совпадают с отдельными STL.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="files">
+    <h2>Файлы проекта</h2>
+    <div class="two">
+      <div class="card">
+        <h3>00_Исходники</h3>
+        <p>Исходный проект Optolink и три исходные STL.</p>
+        <ul class="folder-list">
+          <li><a href="00_Исходники/viessmann-optolink-devkit1.fcstd">Проект Optolink</a></li>
+          <li><a href="00_Исходники/Gehäuse.stl">Gehäuse.stl</a></li>
+          <li><a href="00_Исходники/Deckel.stl">Deckel.stl</a></li>
+          <li><a href="00_Исходники/V-Kleil.stl">V-Kleil.stl</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>01_Разработка</h3>
+        <p><a href="01_Разработка/Optolink_ESP_v2.FCStd">Основная сборка FreeCAD</a> · <a href="01_Разработка/V_fit_variants.FCStd">Модели вариантов V-вставки</a></p>
+        <p>Редактируемые эскизы: <a href="01_Разработка/Эскизы/01_Жёсткие козырьки.drawio">козырьки</a> · <a href="01_Разработка/Эскизы/02_Профили для печати.drawio">профили</a>.</p>
+      </div>
+      <div class="card">
+        <h3>02_На печать</h3>
+        <p>Шесть отдельных STL из таблицы и <a href="02_На печать/print.zip" download>единый ZIP</a>. Для одного устройства выбрать один вариант V-вставки.</p>
+      </div>
+      <div class="card">
+        <h3>03_Иллюстрации</h3>
+        <p>Виды корпуса, кассеты, <a href="03_Иллюстрации/assembly-open.webp">открытой</a> и <a href="03_Иллюстрации/assembly-closed.webp">закрытой сборки</a>, сравнение вариантов V-вставки.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Optolink ESP v2 · 18 ноября 2026 · <a href="#top">К началу страницы</a></div></footer>
+</body>
+</html>
+

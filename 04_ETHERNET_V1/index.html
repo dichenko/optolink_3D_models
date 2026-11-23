@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ETHERNET V1 — корпус Waveshare ESP32-S3</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #edf2f6;
+      --panel: #fff;
+      --ink: #142a37;
+      --secondary: #455b69;
+      --accent: #0e6269;
+      --line: #d7e1e7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 1rem/1.6 "Segoe UI", Arial, sans-serif;
+    }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    a:hover { color: #073e43; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(100% - 48px, 1140px); margin-inline: auto; }
+    header { background: #16333f; color: #fff; padding: 46px 0 40px; }
+    header p { color: #d5e7e8; margin: .45rem 0 0; }
+    h1, h2, h3 { line-height: 1.18; margin: 0; }
+    h1 { font-size: clamp(2.35rem, 6vw, 4.4rem); letter-spacing: -.045em; }
+    h2 { font-size: clamp(1.45rem, 4vw, 2.05rem); letter-spacing: -.02em; }
+    h3 { font-size: 1.1rem; }
+    nav { display: flex; flex-wrap: wrap; gap: .45rem 1.4rem; margin-top: 1.5rem; }
+    nav a { color: #d5e7e8; font-weight: 600; }
+    nav a:hover { color: #fff; }
+    main { padding: 30px 0 54px; }
+    section + section { margin-top: 28px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+    .panel h2 { margin-bottom: 14px; }
+    .file-grid, .figures, .detail-grid { display: grid; gap: 16px; }
+    .file-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .figures, .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .file {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 14px 15px;
+    }
+    .file:hover { background: #f1f8f8; border-color: #92b6b9; }
+    .file strong { font-size: 1.03rem; }
+    .file small { display: block; color: var(--secondary); margin-top: 3px; font-size: .88rem; }
+    .source { margin: 13px 0 0; font-size: .93rem; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+    figcaption { margin-top: 8px; color: var(--secondary); font-size: .93rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .97rem; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    thead th { color: var(--secondary); font-size: .86rem; }
+    tbody th { font-weight: 600; width: 54%; }
+    tbody tr:last-child > * { border-bottom: none; }
+    p { margin: .55rem 0 0; }
+    p + h3 { margin-top: 1rem; }
+    ol { padding-left: 1.4rem; margin: .5rem 0 0; }
+    li + li { margin-top: .35rem; }
+    .note {
+      margin-top: 16px;
+      padding: 12px 15px;
+      background: #e9f4f3;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+    @media (max-width: 760px) {
+      .file-grid, .figures, .detail-grid { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 28px, 1140px); }
+      .panel { padding: 19px; }
+      header { padding-block: 32px; }
+    }
+    @media print {
+      body, header { color: #000; background: #fff; }
+      header p, nav a { color: #333; }
+      header { padding: 12px 0; }
+      nav { display: none; }
+      a { color: #000; }
+      .panel { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>ETHERNET V1</h1>
+      <p>Корпус для Waveshare ESP32‑S3‑POE‑ETH‑CAM‑KIT</p>
+      <nav aria-label="Разделы документа">
+        <a href="#files">Файлы</a>
+        <a href="#views">Виды корпуса</a>
+        <a href="#dimensions">Размеры</a>
+        <a href="#assembly">Печать и сборка</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="panel" id="files" aria-labelledby="files-heading">
+      <h2 id="files-heading">Файлы проекта</h2>
+      <div class="file-grid">
+        <a class="file" href="процесс/Waveshare_ESP32-S3_PoE_fit.FCStd">
+          <strong>Сборка FreeCAD</strong>
+          <small>Лоток, крышка и макет комплекта с PoE</small>
+        </a>
+        <a class="file" href="печать/ETHERNET_V1_base.stl">
+          <strong>Лоток STL</strong>
+          <small>90 × 40 × 12,08 мм</small>
+        </a>
+        <a class="file" href="печать/ETHERNET_V1_cover.stl">
+          <strong>Крышка STL</strong>
+          <small>90 × 40 × 24 мм</small>
+        </a>
+      </div>
+      <p class="source"><a href="процесс/Waveshare_ESP32-S3_PoE.FCStd">Модель корпуса FreeCAD без макета платы</a></p>
+    </section>
+
+    <section class="panel" id="views" aria-labelledby="views-heading">
+      <h2 id="views-heading">Виды корпуса</h2>
+      <div class="figures">
+        <figure>
+          <a href="процесс/Waveshare_ESP32-S3_PoE_preview.png">
+            <img src="процесс/Waveshare_ESP32-S3_PoE_preview.png" width="1600" height="1140"
+                 alt="Торец с разъёмами, кабельный ввод и открытый лоток с двумя усиленными передними упорами">
+          </a>
+          <figcaption>Торцы, боковые упоры текстолита и ложемент кабеля</figcaption>
+        </figure>
+        <figure>
+          <a href="процесс/Waveshare_ESP32-S3_PoE_fit.png">
+            <img src="процесс/Waveshare_ESP32-S3_PoE_fit.png" width="1560" height="1140"
+                 alt="Макет платы с верхним модулем PoE в лотке с защёлками, торец и разрез по прижимам крышки">
+          </a>
+          <figcaption>Посадка платы, вид прямо на разъёмы и разрез по прижимам</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel" id="dimensions" aria-labelledby="dimensions-heading">
+      <h2 id="dimensions-heading">Размеры и конструкция</h2>
+      <div class="detail-grid">
+        <div>
+          <table>
+            <thead><tr><th scope="col">Элемент</th><th scope="col">Размер</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Собранный корпус</th><td>90 × 40 × 34 мм</td></tr>
+              <tr><th scope="row">Габарит комплекта с PoE</th><td>74 × 22 × 23 мм</td></tr>
+              <tr><th scope="row">Основная плата</th><td>72,84 × 21 × 1,6 мм</td></tr>
+              <tr><th scope="row">Стенки, дно и верх крышки</th><td>2,4 мм номинально</td></tr>
+              <tr><th scope="row">Окно RJ45</th><td>19 мм по ширине, снизу боковые упоры</td></tr>
+              <tr><th scope="row">Окно USB‑C</th><td>11 мм в нижней части</td></tr>
+              <tr><th scope="row">Видимый участок торца платы над USB‑C</th><td>9,6 мм по ширине</td></tr>
+              <tr><th scope="row">Кабельный ввод</th><td>Ø5 мм сквозной</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Торец с разъёмами</h3>
+          <p>RJ45 расположен над USB‑C. Два боковых упора закрывают по 5,7 мм переднего торца текстолита. Центральный участок над USB‑C виден в просвете шириной 9,6 мм.</p>
+          <h3>Упор при тяге за Ethernet</h3>
+          <p>Передняя кромка платы упирается в два боковых упора, связанные рёбрами с дном лотка. Площадь осевого упора по модели — 16,7 мм². Усилие рывка на печатной детали ещё не измеряли.</p>
+          <h3>Посадка платы</h3>
+          <p>Плата лежит на продольных полках вдоль обеих длинных кромок и на задней полке. Четыре защёлки удерживают плату в открытом лотке. При закрытии четыре упругих прижима крышки поджимают кромки сверху. Над макетом PoE остаётся 3,2 мм. В крышке пять вентиляционных щелей.</p>
+          <h3>Кабельный торец</h3>
+          <p>Плоскость стыка проходит через ось отверстия Ø5 мм. При сборке кабель укладывается в ложемент лотка и фиксируется стяжкой шириной 2,5 мм.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="assembly" aria-labelledby="assembly-heading">
+      <h2 id="assembly-heading">Печать и сборка</h2>
+      <div class="detail-grid">
+        <div>
+          <h3>Ориентация STL</h3>
+          <p>Размеры заданы в миллиметрах. Лоток лежит дном на столе, крышка перевёрнута наружной плоскостью к столу. Обе модели уже ориентированы по плоскости Z = 0. Геометрия рассчитана на FDM-печать из PETG без поддержек. Над каналом для стяжки в лотке есть мостик 3,2 мм.</p>
+          <h3>Крепёж</h3>
+          <p>Четыре потайных самореза полной длиной 32 мм, диаметр у головки около Ø3,3 мм, диаметр головки около Ø8,25 мм, шаг резьбы 2 мм. В крышке сквозные проходы Ø4 мм и потаи Ø8,6 мм. В лотке вход на первых 2 мм конически сужается с Ø4 до Ø2,5 мм, дальше идёт пилотный участок Ø2,5 мм. Саморезы нарезают резьбу прямо в стойках лотка.</p>
+        </div>
+        <div>
+          <h3>Порядок сборки</h3>
+          <ol>
+            <li>Направьте разъёмы к переднему торцу и опустите плату с установленным PoE на продольные полки. Надавите на кромки текстолита до защёлкивания и проверьте, что все четыре защёлки зашли за кромки.</li>
+            <li>Уложите кабель в ложемент заднего торца. Проведите стяжку через канал и зафиксируйте кабель.</li>
+            <li>Посадите крышку на направляющие лотка. Вставьте четыре самореза сверху и затяните их до посадки головок в потай.</li>
+          </ol>
+          <p class="note">В модели принят угол потая 90° и длина 32 мм от верха головки до кончика. При такой посадке под кончиком остаётся около 1,8 мм до наружной плоскости дна. Перед затяжкой сверьте длину и посадку своего крепежа.</p>
+        </div>
+      </div>
+      <p class="note">Посадку новой ревизии проверили на макете в FreeCAD. Усилие защёлок, прижимов и свободный проход саморезов предстоит проверить на распечатанной детали. Положение камеры OV5640 показано приблизительно. Для оптического окна потребуется привязка к реальному объективу.</p>
+    </section>
+  </main>
+</body>
+</html>
+
+

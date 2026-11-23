@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optolink · Universal BUS V1</title>
+<style>
+:root{color-scheme:light;--ink:#202824;--muted:#52615a;--line:#cbd6cf;--accent:#146149;--paper:#fff;--soft:#eff6f1}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}main{max-width:1020px;margin:auto;padding:32px 20px 54px}header{border-top:4px solid var(--accent);padding:22px 0 6px}h1{font-size:2rem;line-height:1.18;margin:0 0 8px}h2{font-size:1.3rem;margin:0 0 12px}p{margin:0 0 12px}section{padding:22px 0;border-top:1px solid var(--line)}a{color:var(--accent);text-underline-offset:.16em;overflow-wrap:anywhere}ul,ol{padding-left:1.4em;margin:0}li+li{margin-top:5px}.sketches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}figure{margin:0;min-width:0}svg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#f8fbf9}figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}table{width:100%;border-collapse:collapse;font-size:.94rem}th,td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}thead{background:var(--soft)}tbody th{font-weight:600}small{color:var(--muted)}@media print{main{padding:0}section,figure{break-inside:avoid}}
+</style>
+</head>
+<body><main>
+<header><h1>Optolink · Universal BUS V1</h1><p>Корпус с V-вырезом, перфорированная плата и съёмная крышка с прижимными планками. Если корпус уже напечатан, достаточно напечатать новую крышку. Все размеры указаны в миллиметрах.</p></header>
+<section aria-labelledby="files"><h2 id="files">Файлы проекта</h2>
+<ul>
+<li>01_Исходники: <a href="01_Исходники/Deckel.stl">Deckel.stl</a> — исходная крышка из архива Optolink, не для печати этой сборки.</li>
+<li>02_Процесс: <a href="02_Процесс/Universal_BUS_V1.FCStd">Universal_BUS_V1.FCStd</a> — полная сборка FreeCAD с тремя отдельными деталями.</li>
+<li>03_Печать: <a href="03_Печать/01_Housing.stl">корпус STL</a> и <a href="03_Печать/02_Lid.stl">обновлённая крышка STL</a> — обе детали уже ориентированы для печати.</li>
+</ul></section>
+<section aria-labelledby="sketches"><h2 id="sketches">Размерные эскизы</h2>
+<div class="sketches">
+<figure>
+<svg viewBox="0 0 420 333" role="img" aria-labelledby="plan-title">
+<title id="plan-title">Вид на дно изнутри: V раскрыта вверх, между осями стоек 13,526 мм</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#40564d"/></marker></defs>
+<rect x="89" y="45" width="236.445" height="195.375" rx="22.5" fill="#dce9e0" stroke="#263b31" stroke-width="1.5"/>
+<rect x="104" y="60" width="206.445" height="165.375" rx="7.5" fill="white" stroke="#263b31"/>
+<path d="M174 82.5H190L207.22 128.7L225 82.5H240L219 147.8Q218 150.4 215.8 150.4H198.7Q196.4 150.4 195.3 147.8Z" fill="#e7eeea" stroke="#263b31" stroke-width="1.4"/>
+<g fill="#dce9e0" stroke="#263b31"><circle cx="156.5" cy="131.625" r="25.875"/><circle cx="257.945" cy="131.625" r="25.875"/><circle cx="156.5" cy="131.625" r="12" fill="white"/><circle cx="257.945" cy="131.625" r="12" fill="white"/></g>
+<g fill="none" stroke="#40564d"><path d="M89 242v40m236.445-40v40M325.445 45h43m-43 195.375h43M156.5 132v59m101.445-59v59" stroke-dasharray="3 3"/><path d="M91 274H323.445M359 47V238.375M159 182H255.445" marker-start="url(#a)" marker-end="url(#a)"/></g>
+<g text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#202824"><text x="207" y="267">31,526</text><text x="207" y="176">13,526</text><text transform="translate(378 143) rotate(-90)">26,05</text><text x="207" y="311">Сторона отверстия Ø5 и выемки крышки</text></g>
+<path d="M207.22 241v55" stroke="#146149" stroke-dasharray="4 3"/>
+</svg>
+<figcaption>Вид со стороны стоек, плата и крышка скрыты. Контур V показан упрощённо.</figcaption>
+</figure>
+<figure>
+<svg viewBox="0 0 420 333" role="img" aria-labelledby="section-title">
+<title id="section-title">Условный разрез сборки: дно, стойки, плата, крышка и направляющий бортик</title>
+<defs><marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#40564d"/></marker></defs>
+<g stroke="#263b31" stroke-width="1.45">
+<path d="M68 100H92V220H294V100H318V244H68Z" fill="#dce9e0"/>
+<path d="M122 220V172H147V220M239 220V172H264V220" fill="#dce9e0"/>
+<rect x="97" y="152.8" width="192" height="19.2" fill="#76b69a"/>
+<rect x="68" y="76" width="250" height="24" fill="#cbd9e9"/>
+<path d="M92 100v12h12v-12M294 100v12h-12v-12" fill="#cbd9e9"/>
+</g>
+<g stroke="#40564d" fill="none"><path d="M29 102v140m314-164v20m0 4v49" marker-start="url(#b)" marker-end="url(#b)"/><path d="M30 100h37m-37 144h37m253-168h34m-34 24h34m-64 52.8h64" stroke-dasharray="3 3"/></g>
+<g font-family="system-ui,sans-serif" font-size="13" fill="#202824"><text x="12" y="177">12</text><text x="354" y="91">2</text><text x="354" y="131">4,4</text><text x="193" y="93" text-anchor="middle">Крышка</text><text x="193" y="167" text-anchor="middle">Плата 1,6</text><text x="193" y="238" text-anchor="middle">Дно 2</text><text x="193" y="280" text-anchor="middle">Плата опирается на две стойки</text></g>
+</svg>
+<figcaption>Условный разрез без масштаба. Показаны направляющие крышки. Прижимные планки в этот разрез не попали.</figcaption>
+</figure>
+</div></section>
+<p><a href="02_Процесс/Lid_fit_sketch.png">Посадка крышки и разрез через прижимную площадку</a></p>
+<section aria-labelledby="sizes"><h2 id="sizes">Ключевые размеры</h2>
+<table><thead><tr><th scope="col">Элемент</th><th scope="col">Размеры, мм</th></tr></thead><tbody>
+<tr><th scope="row">Корпус</th><td>31,526 × 26,05 × 12; дно 2; стенки 2 × 10 от верхней плоскости дна; радиусы углов R3 снаружи / R1 внутри.</td></tr>
+<tr><th scope="row">V-вырез и стойки</th><td>Ширина раскрытия V около 8,845. От верхнего края V до наружного края корпуса 5, от нижнего края V до наружного края 12. Между осями стоек 13,526; от каждой оси до ближайшей боковой грани 9. Стойки Ø6,9, отверстия в основании Ø3,2.</td></tr>
+<tr><th scope="row">Отверстие в стенке</th><td>Сквозное Ø5 по центру стенки со стороны вершины V. Нижняя кромка на 2 выше низа корпуса, ось на 4,5.</td></tr>
+<tr><th scope="row">Плата</th><td>27 × 21,5 × 1,6; 76 отверстий Ø1 с шагом 2,54; 2 монтажных отверстия Ø2,7. Зазоры до стенок 0,263 слева и справа и 0,275 спереди и сзади.</td></tr>
+<tr><th scope="row">Крышка</th><td>31,526 × 26,05. Толщина верхней панели 2, полная высота крышки 5,6. Глубина направляющих 1. Посадочный контур 27,526 × 22,050 с углами R1 повторяет проём корпуса. Номинальный зазор по X и Y равен 0. Две прижимные планки входят на 3,6.</td></tr>
+<tr><th scope="row">Посадка крышки</th><td>Четыре площадки трения на двух планках со скосами. Наружные грани планок прилегают к стенкам. Каждая площадка выступает на 0,10 за плоскость стенки. До установки размер по вершинам площадок 22,250 при ширине проёма 22,050. При вставке планки поджимаются внутрь. Фактическая плотность зависит от размера напечатанных деталей.</td></tr>
+<tr><th scope="row">Выемка под отвёртку</th><td>6 (ширина) × 1,8 (глубина) × 1,2 (высота). Расположена над отверстием Ø5.</td></tr>
+<tr><th scope="row">Сборка</th><td>31,526 × 26,05 × 14. От верха платы до кромки корпуса 4,4, по высоте до концов планок 0,8. Высота компонентов не учитывалась.</td></tr>
+</tbody></table></section>
+<section aria-labelledby="print"><h2 id="print">Печать и сборка</h2>
+<ol>
+<li>Импортируйте STL в миллиметрах. Корпус ориентирован дном вниз, крышка — наружной плоскостью вниз. Проверьте предпросмотр слоёв вокруг бокового отверстия и выемки.</li>
+<li>Уложите плату на обе стойки и совместите монтажные отверстия. Перед закрытием проверьте высоту компонентов.</li>
+<li>Совместите выемку крышки с отверстием Ø5 и нажмите, пока крышка не сядет на кромку. При примерке проверьте, что четыре площадки прижимных планок удерживают крышку трением о стенки корпуса.</li>
+<li>Для снятия вставьте плоское лезвие около 4 × 0,8 в выемку и слегка поверните, опираясь на верхнюю кромку корпуса.</li>
+</ol></section>
+</main></body></html>

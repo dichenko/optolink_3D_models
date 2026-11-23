@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optolink ESP v3 — проект и комплект для печати</title>
+<meta name="description" content="Сборка FreeCAD, открытый паз USB-C, усиленная H-кассета и комплект STL для Optolink ESP v3.">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f2f3ef;
+    --white: #fff;
+    --ink: #1c282b;
+    --muted: #4e6063;
+    --accent: #175958;
+    --mint: #e9f2ed;
+    --line: #d7dfd8;
+    --rule: #e6eae4;
+    --amber: #fff3dc;
+    --amber-line: #b88536;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box }
+  html { scroll-behavior: smooth }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.58 "Segoe UI", system-ui, sans-serif }
+  a { color: var(--accent); text-underline-offset: 3px }
+  a:hover { color: #0a3f3d }
+  :focus-visible { outline: 3px solid #46736c; outline-offset: 4px }
+  img { display: block; max-width: 100%; height: auto }
+  .wrap { width: min(1160px, 100% - 56px); margin-inline: auto }
+  .bar { background: var(--white); border-bottom: 1px solid var(--line) }
+  .bar-inner { min-height: 67px; display: flex; align-items: center; justify-content: space-between; gap: 20px }
+  .brand { color: var(--ink); text-decoration: none; font-weight: 750; white-space: nowrap }
+  nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-size: .9rem }
+  nav a { color: var(--muted); text-decoration: none }
+  nav a:hover { text-decoration: underline }
+  .hero { padding-block: 46px 30px; display: grid; grid-template-columns: 1fr 1.02fr; gap: 28px; align-items: stretch }
+  .intro { border-radius: 21px; background: #193733; color: #fff; padding: clamp(25px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center }
+  .intro small { color: #bbd6cc; font-size: .84rem; font-weight: 630 }
+  h1, h2, h3, p { margin: 0 }
+  h1 { font-size: clamp(2.55rem, 5vw, 4.7rem); line-height: .99; letter-spacing: -.045em; margin: 13px 0 20px; font-weight: 700 }
+  h2 { font-size: clamp(1.65rem, 2.65vw, 2.3rem); letter-spacing: -.032em; line-height: 1.14; margin-bottom: 13px }
+  h3 { font-size: 1.14rem; line-height: 1.34; margin-bottom: 7px }
+  .intro p { color: #e0ede5; max-width: 43ch; font-size: 1.025rem }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px }
+  .button { padding: 10px 14px; border: 1px solid #9dbcb1; color: #fff; border-radius: 9px; text-decoration: none; font-size: .89rem; font-weight: 680 }
+  .button:hover { background: #284d46; color: white }
+  .button.primary { background: #e6f4eb; border-color: #e6f4eb; color: #1c3e37 }
+  .button.primary:hover { background: #fff; color: #1c3e37 }
+  figure { margin: 0; background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden }
+  .hero-image { display: flex; flex-direction: column; justify-content: center; min-width: 0 }
+  .hero-image img { width: 100%; max-height: 415px; object-fit: contain; margin: auto }
+  figcaption { padding: 11px 15px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--rule); background: #fbfcfa }
+  .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 8px }
+  .quick > div { background: var(--white); border: 1px solid var(--line); border-radius: 13px; padding: 15px 18px }
+  .quick strong { display: block; font-size: 1.18rem; line-height: 1.25; margin-bottom: 4px }
+  .quick span, .lead { color: var(--muted) }
+  section { padding-top: 40px; scroll-margin-top: 20px }
+  .lead { max-width: 82ch; margin-bottom: 17px }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--white); border-radius: var(--radius) }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem }
+  caption { text-align: left; padding: 13px 17px; background: #e7efe9; font-weight: 700 }
+  th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule) }
+  thead th { background: #f7f9f6; color: var(--muted); font-size: .81rem; font-weight: 650 }
+  tbody th { font-weight: 650 }
+  tbody tr:last-child > * { border-bottom: 0 }
+  .size { white-space: nowrap; font-variant-numeric: tabular-nums }
+  .ref, .two, .gallery { display: grid; gap: 15px }
+  .ref { margin-top: 15px }
+  .two { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px }
+  .card, .note { border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); padding: 17px 20px }
+  .card p + p, .note p + p { margin-top: 9px }
+  .folder-list { columns: 2; padding-left: 18px; margin: 8px 0 0; column-gap: 20px }
+  .folder-list li { overflow-wrap: anywhere; break-inside: avoid; margin-bottom: 3px }
+  .note { background: var(--amber); border-color: #ecd8b6; border-left: 4px solid var(--amber-line) }
+  .callout { background: var(--mint) }
+  .steps { margin: 8px 0 0; padding-left: 23px }
+  .steps li + li { margin-top: 7px }
+  .history { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 12px }
+  .history li { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px }
+  .history li p { max-width: 106ch }
+  .history li p + p { margin-top: 8px }
+  .detail-link { margin-top: 10px; font-size: .88rem }
+  .variant { margin-top: 15px }
+  .variant img { width: 100%; max-height: 280px; object-fit: contain; background: #fff }
+  .files { margin-top: 15px }
+  footer { border-top: 1px solid var(--line); margin-top: 43px; padding-block: 19px 32px; color: var(--muted); font-size: .87rem }
+  @media (max-width: 800px) {
+    .wrap { width: min(100% - 32px, 670px) }
+    .bar-inner { flex-wrap: wrap; gap: 7px; padding-block: 12px }
+    nav { gap: 6px 14px }
+    .hero { grid-template-columns: 1fr; padding-block: 25px 17px; gap: 13px }
+    .hero-image img { max-height: 350px }
+    .quick { gap: 8px }
+    .quick > div { padding: 10px }
+    .quick strong { font-size: 1rem }
+    .quick span { font-size: .8rem }
+    .two, .gallery { grid-template-columns: 1fr }
+    .gallery img { width: 100%; max-height: 300px; object-fit: contain }
+    td, th { padding: 10px 12px }
+    section { padding-top: 31px }
+  }
+  @media (max-width: 420px) {
+    .quick { grid-template-columns: 1fr }
+    .quick strong { display: inline; margin: 0 5px 0 0 }
+    .folder-list { columns: 1 }
+  }
+  @media print {
+    body { background: white }
+    .wrap { width: 100% }
+    .actions, nav { display: none }
+    .hero { padding-block: 16px; grid-template-columns: 1fr 1fr }
+    .intro { color: var(--ink); border: 1px solid var(--line); background: var(--white) }
+    .intro small, .intro p { color: var(--muted) }
+    .card, .note, figure, .history li, tr { break-inside: avoid }
+    h2, h3 { break-after: avoid }
+  }
+</style>
+</head>
+<body id="top">
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="#top">Optolink ESP v3</a>
+    <nav aria-label="Разделы проекта">
+      <a href="#solution">Доработки</a>
+      <a href="#assembly">Сборка</a>
+      <a href="#parts">Детали для печати</a>
+      <a href="#files">Файлы проекта</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <div class="intro">
+      <h1>Optolink<br>ESP v3</h1>
+      <p>Плата ESP32-C3 устанавливается в кассету вне корпуса. Кассета опускается сверху вместе с разъёмом USB-C, а выступ крышки удерживает разъём по высоте.</p>
+      <div class="actions">
+        <a class="button primary" href="01_Разработка/Optolink_ESP_v3.FCStd">Сборка FreeCAD</a>
+        <a class="button" href="02_На печать/print.zip" download>Все STL в ZIP</a>
+      </div>
+    </div>
+    <figure class="hero-image">
+      <img src="03_Иллюстрации/assembly-open.png" alt="ESP32-C3 в синей кассете, USB-C в открытом пазу прозрачного корпуса" width="1050" height="840">
+      <figcaption>Плата и кассета в корпусе перед установкой крышки</figcaption>
+    </figure>
+  </div>
+
+  <section id="solution">
+    <h2>Что изменилось в v3</h2>
+    <p class="lead">В v2 заднюю кромку платы нужно было завести под ступеньки, одновременно попадая разъёмом в закрытое окно боковой стенки. Открытый паз позволяет выполнить эти операции последовательно.</p>
+    <ul class="history">
+      <li><h3>Опора заднего края ESP</h3><p>Опорная полка кассеты продлена на 0,6 мм под заднюю кромку текстолита. Плата садится до существующего торцевого упора. Размер её габаритного макета — 23 × 18 × 1 мм.</p></li>
+      <li><h3>Усиленные ступеньки</h3><p>Каждая ступенька увеличена с 1,5 × 2,5 до 2,5 × 3,5 мм в плане. Пластик у корня увеличивает площадь соединения с кассетой. Под ступеньками предусмотрено 0,2 мм по высоте сверх толщины платы. Между ступеньками оставлен проход 10 мм.</p></li>
+      <li><h3>Паз USB-C и прижим на крышке</h3><p>Верхняя перемычка в стенке убрана. Паз шириной 9,25 мм открыт до верхней кромки. При закрытии выступ крышки входит в паз, а его контактная площадка ложится на верхнюю плоскость металлической оболочки USB-C. Номинальная площадь контакта — 14,9 мм².</p></li>
+    </ul>
+    <div class="gallery">
+      <figure><img src="03_Иллюстрации/housing.png" alt="Корпус с открытым вверх пазом USB-C" width="1050" height="840" loading="lazy"><figcaption>Паз USB-C в верхней кромке стенки</figcaption></figure>
+      <figure><img src="03_Иллюстрации/cassette.png" alt="Синяя H-кассета с двумя увеличенными ступеньками" width="1050" height="840" loading="lazy"><figcaption>Полка и усиленные ступеньки у задней кромки платы</figcaption></figure>
+      <figure><img src="03_Иллюстрации/lid-usb-pad.png" alt="Крышка Optolink ESP v3 со стороны прижима" width="1050" height="840" loading="lazy"><figcaption>Крышка изнутри с площадкой прижима USB-C и меткой ESPv3</figcaption></figure>
+    </div>
+    <div class="card callout files">
+      <h3>Вдавленная маркировка ESPv3</h3>
+      <p>Метка расположена на внутреннем дне корпуса, под крышкой, на полке кассеты под платой и на внутренней стороне каждой V-вставки. На V-вставках надпись разделена на ESP и v3, рядом сохранены точки для различения вариантов.</p>
+      <p>Глубина — 0,4 мм. Штрихи — 0,72 мм на основных деталях и 0,62 мм на V-вставках. В комплектной ориентации углубления открыты вверх. Контуры пяти символов проверены в Cura для сопла 0,4 мм и слоя 0,2 мм.</p>
+    </div>
+  </section>
+
+  <section id="assembly">
+    <h2>Порядок сборки</h2>
+    <div class="two">
+      <div class="card">
+        <ol class="steps">
+          <li>Уложить нижнюю монтажную плату на опоры. Для прохода под полками кассеты наклонить её вдоль X примерно на 11°, завести один край под полку и опустить второй.</li>
+          <li>Вне корпуса задвинуть ESP32-C3 со стороны USB под две ступеньки кассеты до заднего упора.</li>
+          <li>Опустить кассету на полки корпуса. Одновременно завести USB-C в открытый верх паза.</li>
+          <li>Защёлкнуть крышку. Её выступ входит в паз и ограничивает подъём разъёма.</li>
+        </ol>
+      </div>
+      <aside class="note">
+        <h3>Примерка на отпечатке</h3>
+        <p>В FreeCAD проверены траектории установки платы и кассеты и посадка крышки. Контакт крышки с оболочкой USB-C задан без натяга.</p>
+        <p>При первой сборке сверить габариты реальной платы, высоту разъёма и свободное место у ступенек. После закрытия проверить люфт платы при нескольких циклах вставки и извлечения кабеля.</p>
+      </aside>
+    </div>
+    <div class="two files">
+      <figure><img src="03_Иллюстрации/assembly-closed.png" alt="Закрытый корпус с доступным гнездом USB-C" width="1050" height="840" loading="lazy"><figcaption>Закрытая сборка со стороны USB-C</figcaption></figure>
+      <figure class="variant"><img src="03_Иллюстрации/v-variants.webp" alt="Три V-вставки с гравировкой ESPv3 и разным числом точек" loading="lazy"><figcaption>V-вставки с меткой ESPv3. Слева направо — исходный контур, −0,1 мм и −0,2 мм на сторону.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="parts">
+    <h2>Детали для печати</h2>
+    <p class="lead">Для одного устройства нужны корпус, крышка, кассета и один вариант V-вставки. Корпус и кассета ориентированы основанием на стол, крышка — наружной плоскостью вниз.</p>
+    <div class="table-wrap">
+      <table aria-label="Печатные детали Optolink ESP v3">
+        <thead><tr><th scope="col">Деталь</th><th scope="col">Габариты, мм</th><th scope="col">Особенность</th><th scope="col">Файл</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Корпус</th><td class="size">34,15 × 34,25 × 19,00</td><td>Открытый паз USB-C.</td><td><a href="02_На печать/01_Корпус.stl" download>01 · STL</a></td></tr>
+          <tr><th scope="row">Крышка</th><td class="size">34,15 × 34,25 × 5,00</td><td>Выступ с площадкой прижима USB-C.</td><td><a href="02_На печать/02_Крышка.stl" download>02 · STL</a></td></tr>
+          <tr><th scope="row">H-кассета</th><td class="size">30,65 × 30,75 × 3,70</td><td>Удлинённая опорная полка и увеличенные ступеньки.</td><td><a href="02_На печать/03_H-кассета.stl" download>03 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, исходная</th><td class="size">10,146 × 10,35 × 11,00</td><td>Без точки.</td><td><a href="02_На печать/04_V-вставка_orig.stl" download>04 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, −0,1 мм</th><td class="size">9,945 × 10,15 × 11,00</td><td>Одна точка. Контур уменьшен на 0,1 мм на сторону.</td><td><a href="02_На печать/05_V-вставка_m1.stl" download>05 · STL</a></td></tr>
+          <tr><th scope="row">V-вставка, −0,2 мм</th><td class="size">9,745 × 9,95 × 11,00</td><td>Две точки. Контур уменьшен на 0,2 мм на сторону.</td><td><a href="02_На печать/06_V-вставка_m2.stl" download>06 · STL</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="files">
+    <h2>Файлы проекта</h2>
+    <div class="two">
+      <div class="card">
+        <h3>00_Исходники</h3>
+        <ul class="folder-list">
+          <li><a href="00_Исходники/viessmann-optolink-devkit1.fcstd">Проект Optolink</a></li>
+          <li><a href="00_Исходники/Gehäuse.stl">Gehäuse.stl</a></li>
+          <li><a href="00_Исходники/Deckel.stl">Deckel.stl</a></li>
+          <li><a href="00_Исходники/V-Kleil.stl">V-Kleil.stl</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>01_Разработка</h3>
+        <p><a href="01_Разработка/Optolink_ESP_v3.FCStd">Сборка Optolink ESP v3</a> · <a href="01_Разработка/V_fit_variants.FCStd">Модели вариантов V-вставки</a></p>
+      </div>
+      <div class="card">
+        <h3>02_На печать</h3>
+        <p>Шесть STL из таблицы в одном архиве. <a href="02_На печать/print.zip" download>Скачать print.zip</a></p>
+      </div>
+      <div class="card">
+        <h3>03_Иллюстрации</h3>
+        <p>Виды корпуса, кассеты и крышки, открытая и закрытая сборки, сравнение V-вставок.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Optolink ESP v3 · 21 ноября 2026 · <a href="#top">К началу страницы</a></div></footer>
+</body>
+</html>
